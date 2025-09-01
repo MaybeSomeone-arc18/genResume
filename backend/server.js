@@ -11,7 +11,7 @@ connectDB();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // CORS: allow configured origins or sensible localhost defaults
-const allowedOrigins = (process.env.CLIENT_ORIGIN || 'http://localhost:5173,http://localhost:3000').split(',').map(s => s.trim());
+const allowedOrigins = (process.env.CLIENT_ORIGIN || 'http://localhost:5173,http://localhost:5174,http://localhost:3000').split(',').map(s => s.trim());
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) return callback(null, true);

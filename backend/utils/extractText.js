@@ -28,10 +28,7 @@ async function extractText(filePath) {
     // Local file
     buffer = fs.readFileSync(filePath);
   }
-  if (ext === '.pdf') {
-    const data = await pdfParse(buffer);
-    return data.text || '';
-  }
+
   if (ext === '.docx') {
     const { value } = await mammoth.extractRawText({ buffer });
     return value || '';
