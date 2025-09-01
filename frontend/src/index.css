@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.625rem; /* Matches the card's rounded corners in the image */
+  --spacing-unit: 1rem; /* Define a base spacing unit for consistency */
+}
+
+@layer utilities {
+  .content-spacing {
+    padding: var(--spacing-unit);
+  }
+  .card-spacing {
+    padding: calc(var(--spacing-unit) * 2); /* Matches p-8 (2rem) */
+  }
+}
