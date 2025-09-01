@@ -123,6 +123,7 @@ export default function RefineResumePage() {
               Upload Your Resume
             </h3>
             <p className="text-gray-600 text-center text-sm">
+
               Choose your resume file (DOC, DOCX, TXT, or image format)
             </p>
 
