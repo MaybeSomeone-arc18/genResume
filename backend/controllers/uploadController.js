@@ -11,10 +11,10 @@ exports.upload = async (req, res) => {
 
     const filePath = file.path; // Cloudinary URL
     let text = '';
-    const ext = file.originalname.split('.').pop().toLowerCase();
-    if (['pdf', 'docx', 'txt'].includes(ext)) {
-      text = await extractText(filePath);
-    } // For images, no text extraction
+    // const ext = file.originalname.split('.').pop().toLowerCase();
+    // if (['docx', 'txt'].includes(ext)) {
+    //   text = await extractText(filePath);
+    // } // For images, no text extraction
 
     let roleKeywords = [];
     if (req.body.roleId) {
@@ -28,7 +28,7 @@ exports.upload = async (req, res) => {
     const resume = new Resume({
       title: req.body.title || file.originalname,
       roleId: req.body.roleId || null,
-      companyId: req.body.companyId || null,
+      companyName: req.body.companyName || '',
       data: { text },
       pdfUrl: filePath, // Cloudinary URL
       atsScore,

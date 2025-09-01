@@ -68,7 +68,7 @@ export default function RefineResumePage() {
       const formData = new FormData();
       formData.append('file', selectedFile);
       if (role) formData.append('roleId', role);
-      if (company) formData.append('companyId', company);
+      if (company) formData.append('companyName', company);
 
       const response = await fetch('http://localhost:5000/api/upload', {
         method: 'POST',
@@ -123,7 +123,7 @@ export default function RefineResumePage() {
               Upload Your Resume
             </h3>
             <p className="text-gray-600 text-center text-sm">
-              Choose your resume file (PDF, DOC, DOCX, TXT, or image format)
+              Choose your resume file (DOC, DOCX, TXT, or image format)
             </p>
 
             {!selectedFile ? (
@@ -133,11 +133,11 @@ export default function RefineResumePage() {
                 onDragOver={handleDragOver}
               >
                 <p className="text-gray-500">Click to upload or drag and drop</p>
-                <p className="text-gray-400 text-sm">PDF, DOC, DOCX, TXT, JPG, PNG, GIF up to 10MB</p>
+                <p className="text-gray-400 text-sm">DOC, DOCX, TXT, JPG, PNG, GIF up to 10MB</p>
                 <input
                   ref={fileInputRef}
                   type="file"
-                  accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png,.gif"
+                  accept=".doc,.docx,.txt,.jpg,.jpeg,.png,.gif"
                   className="hidden"
                   id="resumeUpload"
                   onChange={handleFileSelect}

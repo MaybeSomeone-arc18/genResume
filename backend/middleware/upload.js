@@ -11,9 +11,9 @@ const storage = multer.diskStorage({
 });
 
 function fileFilter(req, file, cb) {
-  const allowed = ['.pdf', '.doc', '.docx', '.txt', '.jpg', '.jpeg', '.png', '.gif', '.zip'];
+  const allowed = ['.doc', '.docx', '.txt', '.jpg', '.jpeg', '.png', '.gif', '.zip'];
   const ext = path.extname(file.originalname).toLowerCase();
-  if (!allowed.includes(ext)) return cb(new Error('Only .pdf, .doc, .docx, .txt, .zip and image files are allowed'));
+  if (!allowed.includes(ext)) return cb(new Error('Only .doc, .docx, .txt, .zip and image files are allowed'));
   cb(null, true);
 }
 
