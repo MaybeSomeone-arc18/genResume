@@ -16,5 +16,5 @@ COPY . .
 # Expose backend port
 EXPOSE 5000
 
-# Start the backend server
+# Default command (can be overridden in docker-compose.yml)
 CMD ["npm", "run", "start"]

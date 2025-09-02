@@ -4,7 +4,7 @@ FROM node:18
 # Set working directory inside container
 WORKDIR /app
 
-# Copy package.json and package-lock.json first (for caching)
+# Copy package.json and package-lock.json first
 COPY package*.json ./
 
 # Install dependencies
@@ -16,5 +16,5 @@ COPY . .
 # Expose the React dev server port
 EXPOSE 3000
 
-# Start the React app
+# Default command (can be overridden in docker-compose.yml)
 CMD ["npm", "start"]
